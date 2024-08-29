@@ -6,7 +6,8 @@ const AnimeList = ({ api }) => {
         <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-2 md:gap-4 px-1 md:px-2 container mx-auto">
             {api.data.map((anime) => {
                 return(
-                <Link href={`/${anime.mal_id}`} key={anime.mal_id} className="cursor-pointer">
+                <Link href={`/${anime.mal_id}`} key={anime.mal_id} className="cursor-pointer
+                 text-color-secondary hover:text-slate-950 transition-all">
                     <div className="relative overflow-hidden rounded-md">
                     <Image src={anime.images.webp.image_url} alt="..." width={350} height={350} className="object-cover" />
                     {anime.rank && (
@@ -20,7 +21,8 @@ const AnimeList = ({ api }) => {
                             </span>
                     )}
                     </div>
-                    <h3 className="font-bold md:text-xl text-md p-4">{anime.title}</h3>
+                    <h3 className="font-bold text-sm sm:text-base 
+                    md:text-lg lg:text-xl p-2 sm:p-3 md:p-4">{anime.title}</h3>
                 </Link>
                 )
             })}   

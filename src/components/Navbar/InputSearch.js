@@ -11,6 +11,11 @@ const InputSearch = () => {
     const handleSeacrh = (event) => {
         event.preventDefault()
         let keyword = searchRef.current.value
+
+        if (!keyword) {
+            // Jika input kosong, jangan lakukan apapun
+            return
+        }
     keyword = encodeURIComponent(keyword.trim()) // Encode terlebih dahulu untuk memastikan URL aman
     router.push(`/search/${decodeURIComponent(keyword)}`)
     }
