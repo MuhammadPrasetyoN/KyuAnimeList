@@ -17,7 +17,7 @@ const InputSearch = () => {
             return
         }
     keyword = encodeURIComponent(keyword.trim()) // Encode terlebih dahulu untuk memastikan URL aman
-    router.push(`/search/${decodeURIComponent(keyword)}`)
+    router.push(`/search/${decodeURI(keyword)}`)
     }
 
     const handleKeyDown = (event) => {

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import AnimeList from "../components/AnimeList";
-import Search from "../components/Search";
 import Header from "@/components/AnimeList/header";
 
 const Page = async () => {
