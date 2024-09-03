@@ -1,4 +1,4 @@
-import { getAnimeResponse } from "@/app/libs/api-libs"
+import { getAnimeResponse } from "@/libs/api-libs"
 import VideoPlayer from "@/components/utilities/VideoPlayer"
 import Image from "next/image"
 import Link from "next/link"
@@ -30,13 +30,13 @@ const Page = async ({ params: {id} }) => {
                         className="w-full rounded-md object-cover"
                     />
                 </div> */}
-                <div className="pt-4 gap-2 flex text-color-secondary md:text-lg text-sm">
+                <div className="pt-4 gap-2 flex text-color-secondary md:text-lg text-sm font-semibold">
                     <ul>
-                        <p> type: {anime.data.type}</p>
-                        <p> source: {anime.data.source}</p>
-                        <p> status: {anime.data.status}</p>
-                        <p> season: {anime.data.season || '-'}</p>
-                        <p> aired: {anime.data.aired.from } - {anime.data.aired.to} </p>
+                        <p className="text-rose-600"> Type: {anime.data.type}</p>
+                        <p> Source: {anime.data.source}</p>
+                        <p> Status: {anime.data.status}</p>
+                        <p> Season: {anime.data.season || '-'}</p>
+                        <p> Aired: {anime.data.aired.from } - {anime.data.aired.to} </p>
                     </ul>
                 </div>
             </div> 

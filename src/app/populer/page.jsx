@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import HeaderMenu from '@/components/utilities/HeaderMenu'
 import Pagination from '@/components/utilities/Pagination'
 import AnimeList from '@/components/AnimeList'
-import { getAnimeResponse } from '../libs/api-libs'
+import { getAnimeResponse } from '@/libs/api-libs'
 
 const page = () => {
   const [page, setPage] = useState(1)
@@ -16,8 +16,13 @@ const page = () => {
     //   )
     // const data = await response.json()
     const populerAnime = await getAnimeResponse("top/anime", `page=${page}`)
-      setTopAnime(populerAnime)
+    const populerAnimeWithType = {
+      ...populerAnime,
+      data: populerAnime.data.map((item) => ({ ...item, type: "anime" }))
+    }  
+    setTopAnime(populerAnimeWithType)
   }
+  
 
   useEffect(() => {
     fetchData()

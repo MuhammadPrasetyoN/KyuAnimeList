@@ -1,8 +1,8 @@
 import Link from "next/link";
 import AnimeList from "../components/AnimeList";
 import Header from "@/components/AnimeList/header";
-import { getAnimeResponse } from "./libs/api-libs";
-
+import { getAnimeResponse, getNestedAnimeResponse } from "@/libs/api-libs";
+import AnimeRecommendation from "@/components/AnimeRecommendation";
 
 const Page = async () => {
 
@@ -10,18 +10,27 @@ const Page = async () => {
   // const topAnime = await response.json()
   
   const topAnime = await getAnimeResponse("top/anime", "limit=10")
+  const topAnimeWithType = {
+    data: topAnime.data.map((item) => ({ ...item, type: "anime" }))
+  };
+  let recommendedAnime = await getNestedAnimeResponse("recommendations/anime", "entry")
+  
+  recommendedAnime = { data: recommendedAnime.sort(() => Math.random() - 0.5).slice(0, 12)}
+
+
   return (
     <>
       {/* anime terpopuler */}
       <section>
       <Header title={"Paling Populer"} linkTitle={"Lihat Semua"} linkHref={"/populer"}/>
-      <AnimeList api={topAnime}/>
+      <AnimeList api={topAnimeWithType}/>
       </section>
 
-      {/* anime terbaru */}
+      {/* anime rekomendasi */}
       <section>
-      <Header title={"Paling Baru"} linkTitle={"Lihat Sekarang"} linkHref={"/new"}/>
-      <AnimeList api={topAnime}/>
+      <Header title={"Rekomendasi"}/>
+      <AnimeRecommendation api={recommendedAnime}/>
+ 
       </section>
     </>
   )
