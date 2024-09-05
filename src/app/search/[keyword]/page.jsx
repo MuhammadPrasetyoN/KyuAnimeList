@@ -1,6 +1,8 @@
 import { getAnimeResponse } from "@/libs/api-libs";
 import AnimeList from "@/components/AnimeList";
 import Header from "@/components/AnimeList/header";
+import NotFound from "@/app/not-found";   
+
 
 const Page = async ({params}) => {
   const { keyword } = params;
@@ -18,6 +20,11 @@ const Page = async ({params}) => {
   const combinedResults = {
     data: [...animeResults, ...mangaResults]
   };
+
+  // Jika tidak ada hasil yang ditemukan
+  if (combinedResults.data.length === 0) {
+    return <NotFound/>; // Render halaman not-found jika tidak ada hasil
+    }
 
   // Sort the results so that titles that match the keyword come first
   combinedResults.data.sort((a, b) => {

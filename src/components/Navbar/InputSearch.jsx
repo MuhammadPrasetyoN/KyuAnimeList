@@ -12,7 +12,7 @@ const InputSearch = () => {
         event.preventDefault()
         let keyword = searchRef.current.value
 
-        if (!keyword) {
+        if (!keyword || keyword.trim() == "") {
             // Jika input kosong, jangan lakukan apapun
             return
         }

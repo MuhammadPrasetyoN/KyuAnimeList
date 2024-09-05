@@ -1,7 +1,7 @@
 import Link from "next/link";
 import AnimeList from "../components/AnimeList";
 import Header from "@/components/AnimeList/header";
-import { getAnimeResponse, getNestedAnimeResponse } from "@/libs/api-libs";
+import { getAnimeResponse, getNestedAnimeResponse, random } from "@/libs/api-libs";
 import AnimeRecommendation from "@/components/AnimeRecommendation";
 
 const Page = async () => {
@@ -15,8 +15,8 @@ const Page = async () => {
   };
   let recommendedAnime = await getNestedAnimeResponse("recommendations/anime", "entry")
   
-  recommendedAnime = { data: recommendedAnime.sort(() => Math.random() - 0.5).slice(0, 12)}
-
+  //recommendedAnime = { data: recommendedAnime.sort(() => Math.random() - 0.5).slice(0, 12)}
+  recommendedAnime = random(recommendedAnime, 12)
 
   return (
     <>
