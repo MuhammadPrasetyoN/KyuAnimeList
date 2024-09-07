@@ -21,6 +21,10 @@ module.exports = {
           highlight: '#ff5722', 
           link: '#007bff',        
           background: '#f7f7f7',
+          blue: '#3472f7',
+          pink: '#fc51fc',
+          darkblue: '#2a31f7',
+          text: '#552aa3'
         }
       },
     },

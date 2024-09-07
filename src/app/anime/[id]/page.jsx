@@ -30,7 +30,7 @@ const Page = async ({ params: {id} }) => {
                         className="w-full rounded-md object-cover"
                     />
                 </div> */}
-                <div className="pt-4 gap-2 flex text-color-secondary md:text-lg text-sm font-semibold">
+                <div className="pt-4 gap-2 flex text-color-dark md:text-lg text-sm font-semibold">
                     <ul>
                         <p className="text-rose-600"> Type: {anime.data.type}</p>
                         <p> Source: {anime.data.source}</p>

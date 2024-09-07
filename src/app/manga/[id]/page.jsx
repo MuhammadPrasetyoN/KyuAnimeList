@@ -7,7 +7,7 @@ const MangaPage = async ({ params: { id } }) => {
   return (
     <>
       <div className="pt-4 px-4">
-        <h3 className="md:text-2xl text-xl text-color-dark font-semibold">{manga.data.title} | <text className="text-teal-600">{manga.data.title_japanese}</text></h3>
+        <h3 className="md:text-2xl text-xl text-color-dark font-semibold">{manga.data.title} | <text className="text-color-pink">{manga.data.title_japanese}</text></h3>
       </div>
       <div className="pt-4 px-4 flex justify-center items-center flex-col md:flex-row gap-2 text-color-secondary">
         <div className="pt-4 px-4 flex-col gap-2">
@@ -19,9 +19,9 @@ const MangaPage = async ({ params: { id } }) => {
             className="w-full rounded-md object-cover"
           />
         </div>
-        <div className="font-semibold pt-4 gap-2 flex text-color-secondary md:text-lg text-sm">
+        <div className="font-semibold pt-4 gap-2 flex text-color-dark md:text-lg text-sm">
           <ul>
-            <p className=" text-teal-700 text-lg"> Type: {manga.data.type}</p>
+            <p className=" text-color-darkblue text-lg"> Type: {manga.data.type}</p>
             <p> Author: {manga.data.authors.name || "N/A"}</p>
             <p> Status: {manga.data.status}</p>
             <p> Volumes: {manga.data.volumes || "N/A"}</p>
@@ -33,33 +33,33 @@ const MangaPage = async ({ params: { id } }) => {
 
       <div className="pt-4 px-4 flex justify-center items-center gap-2 text-color-primary overflow-x-auto">
                         <div className="w-36 flex flex-col justify-center items-center 
-                        rounded-md border-collapse border-color-secondary bg-lime-600">
+                        rounded-md border-collapse border-color-secondary bg-color-blue">
                             <h3>Score</h3>
                             <p className="font-semibold">{manga.data.score || 'N/A'}</p>
                         </div>
                     <div className="w-36 flex flex-col justify-center items-center 
-                        rounded-md border-collapse border-color-secondary bg-lime-600">
+                        rounded-md border-collapse border-color-secondary bg-color-blue">
                         <h3>Rank</h3>
                         <p className="font-semibold">{manga.data.rank || 'N/A'}</p>
                     </div>
                     <div className="w-36 flex flex-col justify-center items-center 
-                        rounded-md border-collapse border-color-secondary bg-lime-600">
+                        rounded-md border-collapse border-color-secondary bg-color-blue">
                         <h3>Popularity</h3>
                         <p className="font-semibold">{manga.data.popularity || 'N/A'}</p>
                     </div>
                     <div className="w-36 flex flex-col justify-center items-center 
-                        rounded-md border-collapse border-color-secondary bg-lime-600">
+                        rounded-md border-collapse border-color-secondary bg-color-blue">
                         <h3>Members</h3>
                         <p className="font-semibold">{manga.data.members || 'N/A'}</p>
                     </div>
                     <div className="w-36 flex flex-col justify-center items-center 
-                        rounded-md border-collapse border-color-secondary bg-lime-600">
+                        rounded-md border-collapse border-color-secondary bg-color-blue">
                         <h3>Favorites</h3>
                         <p className="font-semibold">{manga.data.favorites || 'N/A'}</p>
                     </div>
                 </div>
 
-                <div className="font-semibold text-emerald-800 text-justify px-4 gap-2 pt-4">
+                <div className="font-semibold text-color-text text-justify px-4 gap-2 pt-4">
                     <p className="text-xl md:text-lg text-color-dark">
                         Background
                     </p>

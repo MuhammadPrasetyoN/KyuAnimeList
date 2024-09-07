@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${gabarito.className} bg-gradient-to-r from-[#c2d7ff] to-[#8db3ff]`} >
+      <body className={`${gabarito.className} bg-gradient-to-r from-[#40f0fc] to-[#0fb0cd]`} >
         <Navbar/>
         {children}</body>
     </html>
