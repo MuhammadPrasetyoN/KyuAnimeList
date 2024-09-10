@@ -19,10 +19,14 @@ const Page = async ({ params: {id} }) => {
     return (
         <>
             <div className="pt-4 px-4">
-                <h3 className="md:text-2xl text-xl text-color-dark font-semibold">{anime.data.title } | <text className="text-red-500">{anime.data.title_japanese}</text></h3>
+                <h3 className="md:text-2xl text-xl text-color-dark font-semibold py-2">{anime.data.title } | <text className="text-red-500">{anime.data.title_japanese}</text></h3>
                 {
                     !collection && user && <CollectionButton anime_mal_id={id} 
-                    user_email={user?.email} anime_image={anime.data.images.webp.image_url} anime_title={anime.data.title}/>
+                    user_email={user?.email} 
+                    anime_image={anime.data.images.webp.image_url} 
+                    anime_title={anime.data.title}
+                    type={"anime"}
+                    />
                 }
                 
             </div>

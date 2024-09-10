@@ -19,6 +19,7 @@ model Collection {
   user_email      String
   anime_image     String?
   anime_title     String?
+  type            String?
 
   @@unique([user_email, anime_mal_id]) 
 }
