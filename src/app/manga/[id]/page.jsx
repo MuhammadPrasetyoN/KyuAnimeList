@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { authUserSession } from "@/libs/auth-libs"
 import prisma from "@/libs/prisma"
+import CommentCard from "@/components/AnimeList/CommentCard";
+import CommentInput from "@/components/AnimeList/CommentInput";
 
 const MangaPage = async ({ params: { id } }) => {
   const manga = await getAnimeResponse(`manga/${id}`);
@@ -81,6 +83,18 @@ const MangaPage = async ({ params: { id } }) => {
                     </p>
                     {manga.data.background || "N/A"}
                 </div>  
+
+                <div className="py-4 px-4">
+                    <h3 className="text-color-dark text-2xl mb-2 font-semibold">Komentar Penonton</h3>
+                    <CommentCard anime_mal_id={id}/>
+                    {user && <CommentInput 
+                        anime_mal_id={id} 
+                        user_email={user?.email}
+                        username={user?.name}
+                        anime_title={manga.data.title}
+                        />   
+                    }       
+                </div>
 
       <div className="pt-4 px-4 gap-2 flex-wrap text-color-secondary">
       <h3 className="md:text-xl text-lg text-justify 
