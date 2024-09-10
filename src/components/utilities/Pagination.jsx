@@ -1,3 +1,5 @@
+import { CaretLeft, CaretRight } from "@phosphor-icons/react"
+
 const Pagination = ({ page, lastPage, setPage }) => {
     
     const scrollTop = () => {
@@ -69,13 +71,13 @@ const Pagination = ({ page, lastPage, setPage }) => {
     }
     
     return(
-        <div className="flex justify-center items-center py-4 px-2 gap-4 text-color-dark font-semibold text-xl">
+        <div className="flex justify-center items-center py-4 px-2 gap-2 sm:gap-4 text-color-dark font-semibold text-lg sm:text-xl">
             <button 
                 onClick={handlePrevPage} 
                 className={`transition-all hover:text-color-link ${page === 1 && 'opacity-50 cursor-not-allowed'}`}
                 disabled={page === 1}
             >
-                Previous
+                <CaretLeft size={24} className="color-dark"/>
             </button>
 
             {renderPageNumbers()}
@@ -85,7 +87,7 @@ const Pagination = ({ page, lastPage, setPage }) => {
                 className={`transition-all hover:text-color-link ${page === lastPage && 'opacity-50 cursor-not-allowed'}`}
                 disabled={page === lastPage}
             >
-                Next
+                <CaretRight size={24} className="color-dark"/>
             </button>
 
             

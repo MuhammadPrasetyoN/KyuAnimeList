@@ -27,7 +27,7 @@ const Page = async() => {
                         className="w-full rounded-md"/>
                         <div className="absolute flex items-center justify-center bottom-0 w-full 
                         bg-slate-800 text-color-primary h-16 hover:text-color-accent">
-                            <h5 className="px-2 text-sm lg-text-xl text-center sm:text-sm">
+                            <h5 className="px-2 text-xs lg-text-xl text-center sm:text-sm">
                                 {collect.anime_title}</h5>
                         </div>
                     </Link>

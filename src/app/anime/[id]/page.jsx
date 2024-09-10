@@ -98,6 +98,7 @@ const Page = async ({ params: {id} }) => {
                         user_email={user?.email}
                         username={user?.name}
                         anime_title={anime.data.title}
+                        type={"anime"}
                         />   
                     }       
                 </div>  

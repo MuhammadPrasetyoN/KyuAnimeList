@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const CommentInput = ({anime_mal_id, user_email, username, anime_title}) => {
+const CommentInput = ({anime_mal_id, user_email, username, anime_title, type}) => {
     const [comment, setComment] = useState("")
     const [isCreated, setIsCreated] = useState(false)
 
@@ -16,7 +16,7 @@ const CommentInput = ({anime_mal_id, user_email, username, anime_title}) => {
     const handlePosting = async(event) => {
         event.preventDefault()
         
-        const data = { anime_mal_id, user_email, comment, username, anime_title}
+        const data = { anime_mal_id, user_email, comment, username, anime_title, type}
 
         const response = await fetch("/api/v1/comment", {
             method: "POST",

@@ -85,13 +85,14 @@ const MangaPage = async ({ params: { id } }) => {
                 </div>  
 
                 <div className="py-4 px-4">
-                    <h3 className="text-color-dark text-2xl mb-2 font-semibold">Komentar Penonton</h3>
+                    <h3 className="text-color-dark text-2xl mb-2 font-semibold">Komentar Pembaca</h3>
                     <CommentCard anime_mal_id={id}/>
                     {user && <CommentInput 
                         anime_mal_id={id} 
                         user_email={user?.email}
                         username={user?.name}
                         anime_title={manga.data.title}
+                        type={"manga"}
                         />   
                     }       
                 </div>
