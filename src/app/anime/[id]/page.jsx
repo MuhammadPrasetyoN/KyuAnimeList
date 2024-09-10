@@ -5,6 +5,8 @@ import Link from "next/link"
 import CollectionButton from "@/components/AnimeList/CollectionButton"
 import { authUserSession } from "@/libs/auth-libs"
 import prisma from "@/libs/prisma"
+import CommentInput from "@/components/AnimeList/CommentInput"
+import CommentCard from "@/components/AnimeList/CommentCard"
 
 const Page = async ({ params: {id} }) => {
     const anime = await getAnimeResponse(`anime/${id}`)
@@ -13,7 +15,7 @@ const Page = async ({ params: {id} }) => {
         where: {user_email: user?.email, anime_mal_id: id}
     })
 
-    console.log(collection)
+    //console.log(collection)
     
     //console.log("user:", user)
     return (
@@ -86,6 +88,18 @@ const Page = async ({ params: {id} }) => {
                         <h3>Anggota</h3>
                         <p className="font-semibold">{anime.data.members || 'N/A'}</p>
                     </div>
+                </div>
+
+                <div className="py-4 px-4">
+                    <h3 className="text-color-dark text-2xl mb-2 font-semibold">Komentar Penonton</h3>
+                    <CommentCard anime_mal_id={id}/>
+                    {user && <CommentInput 
+                        anime_mal_id={id} 
+                        user_email={user?.email}
+                        username={user?.name}
+                        anime_title={anime.data.title}
+                        />   
+                    }       
                 </div>  
 
             <div className="pt-4 px-4 gap-2 flex-wrap text-color-secondary">
